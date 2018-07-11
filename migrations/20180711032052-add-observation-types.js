@@ -14,7 +14,7 @@ exports.setup = function(options, seedLink) {
   seed = seedLink;
 };
 
-exports.up = function(db) {
+exports.up = function(db, callback) {
     db.createTable("observation_type", {
         id: {type: 'int', primaryKey: true, autoIncrement:true},
         type: {type:'string', length:5},
@@ -23,8 +23,8 @@ exports.up = function(db) {
     }, callback);
 };
 
-exports.down = function(db) {
-  return null;
+exports.down = function(db, callback) {
+    db.dropTable("observation_type", callback);
 };
 
 exports._meta = {

@@ -18,7 +18,7 @@ exports.up = function(db, callback) {
     db.addIndex("observation", "observation_type_station_idx", ["stationId", "observationTypeId"], false, callback);
 };
 
-exports.down = function(db) {
+exports.down = function(db, callback) {
     db.removeIndex("observation", "observation_type_station_idx", callback);
 };
 

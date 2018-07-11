@@ -18,7 +18,7 @@ exports.up = function(db, callback) {
     db.addIndex("station", "station_ghcnid_idx", ["ghcnid"], false, callback);
 };
 
-exports.down = function(db) {
+exports.down = function(db, callback) {
     db.removeIndex("station", "station_ghcnid_idx", callback);
 };
 
