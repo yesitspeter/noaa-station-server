@@ -1,0 +1,53 @@
+PRCP,tenths of mm,Precipitation 
+SNOW,mm,Snowfall 
+SNWD,mm,Snow depth 
+TMAX,tenths of degrees C,Maximum temperature 
+TMIN,tenths of degrees C,Minimum temperature 
+ACMC,percent,Average cloudiness midnight to midnight from 30-second ceilometer data 
+ACMH,percent,Average cloudiness midnight to midnight from  manual observations 
+ACSC,percent,Average cloudiness sunrise to sunset from 30-second ceilometer data 
+ACSH,percent,Average cloudiness sunrise to sunset from manual observations 
+AWDR,degrees,Average daily wind direction 
+AWND,tenths of meters per second,Average daily wind speed 
+DAEV,days,Number of days included in the multiday evaporation  total 
+DAPR,days,Number of days included in the multiday precipiation total 
+DASF,days,Number of days included in the multiday snowfall  total 
+DATN,days,Number of days included in the multiday minimum temperature  
+DATX,days,Number of days included in the multiday maximum temperature   
+DAWM,days,Number of days included in the multiday wind movement 
+DWPR,days,Number of days with non-zero precipitation included in multiday precipitation total
+EVAP,tenths of mm,Evaporation of water from evaporation pan 
+FMTM,hours and minutes, Time of fastest mile or fastest 1-minute wind
+FRGB,cm,Base of frozen ground layer 
+FRGT,cm,Top of frozen ground layer 
+FRTH,cm,Thickness of frozen ground layer 
+GAHT,cm,Difference between river and gauge height 
+MDEV,tenths of mm,Multiday evaporation total
+MDPR,tenths of mm,Multiday precipitation total 
+MDSF,inches,Multiday snowfall total 
+MDTN,tenths of degrees C,Multiday minimum temperature 
+MDTX,tenths of degrees C,Multiday maximum temperature 
+MDWM,km,Multiday wind movement 
+MNPN,tenths of degrees C,Daily minimum temperature of water in an evaporation pan  
+MXPN,tenths of degrees C,Daily maximum temperature of water in an evaporation pan  
+PGTM,hours and minutes, Peak gust time
+PSUN,percent,Daily percent of possible sunshine 
+TAVG,tenths of degrees C,Average temperature 
+THIC,tenths of mm,Thickness of ice on water 
+TOBS,tenths of degrees C,Temperature at the time of observation 
+TSUN,minutes,Daily total sunshine 
+WDF1,degrees,Direction of fastest 1-minute wind 
+WDF2,degrees,Direction of fastest 2-minute wind 
+WDF5,degrees,Direction of fastest 5-second wind 
+WDFG,degrees,Direction of peak wind gust 
+WDFI,degrees,Direction of highest instantaneous wind 
+WDFM,degrees,Fastest mile wind direction 
+WDMV,km,24-hour wind movement 
+WESD,tenths of mm,Water equivalent of snow on the ground 
+WESF,tenths of mm,Water equivalent of snowfall 
+WSF1,tenths of meters per second,Fastest 1-minute wind speed 
+WSF2,tenths of meters per second,Fastest 2-minute wind speed 
+WSF5,tenths of meters per second,Fastest 5-second wind speed 
+WSFG,tenths of meters per second,Peak gust wind speed 
+WSFI,tenths of meters per second,Highest instantaneous wind speed 
+WSFM,tenths of meters per second,Fastest mile wind speed 

@@ -1,0 +1,21 @@
+{
+  "url":"ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2017.csv.gz",
+  "columns":[
+      "station",
+      "date",
+      "type",
+      "value",
+      null,
+      null,
+      null,
+      "observationTime"
+    ],
+   "table": "observation",
+   "conversions":
+   {
+     "date":"ghcnDate"
+
+   },
+   "format":"CSV"
+
+}

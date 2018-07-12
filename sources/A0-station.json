@@ -1,0 +1,26 @@
+{
+  "url":"ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt",
+  "columns":[
+      "ghcnid",
+      "lat",
+      "long",
+      "elevation",
+      "name"
+    ],
+   "table": "station",
+   "conversions":
+   {
+     "date":"ghcnDate"
+
+   },
+  "format":"SSV",
+  "splitPoints":[
+    12,
+    21,
+    31,
+    38,
+    73
+
+
+  ]
+}

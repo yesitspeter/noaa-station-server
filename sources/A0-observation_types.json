@@ -1,0 +1,11 @@
+{
+  "file":"observation_types.csv",
+  "columns":[
+      "type",
+      "units",
+      "description"
+    ],
+   "table": "observation_type",
+   "format":"CSV"
+
+}
