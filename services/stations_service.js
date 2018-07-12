@@ -1,7 +1,4 @@
-
-
-module.exports  = function(config, callback) {
-
+module.exports = function (config, callback) {
 
 
     const express = require('express');
@@ -11,9 +8,7 @@ module.exports  = function(config, callback) {
     const api = express();
 
 
-
     app.use("/api/v1/", api);
-
 
 
     api.get("/stations", function (req, res) {
@@ -22,9 +17,9 @@ module.exports  = function(config, callback) {
         var limit = req.query.limit;
         var q = req.query.q || "";
 
-        config.databaseClient.getStations(q, limit ).then((result)=>{
+        config.databaseClient.getStations(q, limit).then((result) => {
 
-            res.status(200).json(result.map((station)=>{
+            res.status(200).json(result.map((station) => {
                 return {
                     id: station.ghcnid,
                     name: station.name
@@ -32,12 +27,10 @@ module.exports  = function(config, callback) {
             }));
 
 
-        }).catch(err=> {
+        }).catch(err => {
             res.status(500);
             console.error(err);
         });
-
-
 
 
     });
@@ -48,22 +41,18 @@ module.exports  = function(config, callback) {
         var stationId = req.params.station;
 
 
-        config.databaseClient.getStation(stationId).then((stations)=>{
+        config.databaseClient.getStation(stationId).then((stations) => {
 
 
-
-
-            if(stations.length == 0)
+            if (stations.length == 0)
                 res.status(404);
-            else
-            {
+            else {
                 var station = stations[0];
 
 
-                config.databaseClient.getStationObservationTypes(stationId).then((observatonTypes)=> {
+                config.databaseClient.getStationObservationTypes(stationId).then((observatonTypes) => {
 
                     res.status(200).json(
-
                         {
                             id: station.ghcnid,
                             name: station.name,
@@ -72,7 +61,7 @@ module.exports  = function(config, callback) {
                             elevation: station.elevation,
 
 
-                            observationTypes: observatonTypes.map((t)=>{
+                            observationTypes: observatonTypes.map((t) => {
                                 return {
                                     type: t.type,
                                     description: t.description,
@@ -80,11 +69,7 @@ module.exports  = function(config, callback) {
                                 };
                             })
                         }
-
-
                     );
-
-
 
 
                 });
@@ -93,15 +78,10 @@ module.exports  = function(config, callback) {
             }
 
 
-
-
-        }).catch(err=> {
+        }).catch(err => {
             res.status(500);
             console.error(err);
         });
-
-
-
 
 
     });
@@ -126,10 +106,9 @@ module.exports  = function(config, callback) {
                 endDate = moment(endDate).toDate();
 
             }
-            types = types.split(",").map(s=>s.trim());
+            types = types.split(",").map(s => s.trim());
 
-        }catch(e)
-        {
+        } catch (e) {
             console.error(e);
             res.status(400);
             return;
@@ -137,50 +116,42 @@ module.exports  = function(config, callback) {
         }
 
 
-        config.databaseClient.getStation(stationId).then((stations)=>{
+        config.databaseClient.getStation(stationId).then((stations) => {
 
 
-                if(stations.length == 0) {  //make sure station exists
-                    res.status(404);
-                    return;
+            if (stations.length == 0) {  //make sure station exists
+                res.status(404);
+                return;
 
-                }
-                else
-                {
-
+            }
+            else {
 
 
-                    config.databaseClient.getObservationsByTypeAndDate(stationId,types, startDate, endDate ).then((observations)=> {
+                config.databaseClient.getObservationsByTypeAndDate(stationId, types, startDate, endDate).then((observations) => {
 
-                        res.status(200).json(
-
-                             observations.map((o)=>{
-                                 return {
-                                     id: o.id,
-                                     type: o.type,
-                                     date: o.date,
-                                     value: o.value
-
-
-                                 };
+                    res.status(200).json(
+                        observations.map((o) => {
+                            return {
+                                id: o.id,
+                                type: o.type,
+                                date: o.date,
+                                value: o.value
 
 
-                             })
+                            };
 
 
-                        );
+                        })
+                    );
 
 
+                });
 
 
-                    });
+            }
 
 
-                }
-
-
-
-        }).catch(err=> {
+        }).catch(err => {
             res.status(500);
             console.error(err);
         });
@@ -189,9 +160,9 @@ module.exports  = function(config, callback) {
     });
 
 
-    app.listen(8888, ()=> {
+    app.listen(8888, () => {
         console.log("Listening on port 8888");
-        if(callback)
+        if (callback)
             callback();
     });
 

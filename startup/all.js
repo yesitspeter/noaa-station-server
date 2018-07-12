@@ -1,5 +1,3 @@
-
-
 const configData = {};
 
 
@@ -19,6 +17,7 @@ async function config() {
     return configData;
 
 }
+
 /**
  * @typedef Configuration
  * @type {object}

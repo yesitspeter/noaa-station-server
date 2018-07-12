@@ -1,25 +1,20 @@
-
 class DatabaseClient {
 
     constructor(databaseClient) {
         this._database = databaseClient;
 
 
-
     }
-
-
 
 
     async isTableEmpty(table) {
+        var result = await this._database.one('select COUNT(*) as C from ' + table);
 
-
-       var result =  await this._database.one('select COUNT(*) as C from ' + table );
-
-       return result["c"] < 1;
+        return result["c"] < 1;
 
 
     }
+
     /**
      * Get stations starting with the specified query against the name.  Will return max results
      * @param {string} query - prefix
@@ -28,7 +23,7 @@ class DatabaseClient {
     getStations(query, max) {
 
 
-        if(query) {
+        if (query) {
             query = query.replace("%", "\\%");
 
             if (!max || max < 0)
@@ -59,7 +54,7 @@ class DatabaseClient {
      * @param {string[]} observationType - the 4 letter observation types to return, required
      * @returns {Promise<Observation[]>}
      */
-    getObservationsByTypeAndDate(ghcnid, observationTypes, startDate, endDate ) {
+    getObservationsByTypeAndDate(ghcnid, observationTypes, startDate, endDate) {
 
         if (!observationTypes)
             return this.getObservations(ghcnid);
@@ -74,18 +69,18 @@ class DatabaseClient {
         var query = 'select * from observation as o where o.station=$1 and type in (' + inList.join(',') + ') ';
 
 
-        if (startDate){
+        if (startDate) {
             queryParams.push(startDate);
             query += " and date >= $" + queryParams.length + " ";
         }
 
-        if(endDate) {
+        if (endDate) {
             queryParams.push(endDate);
-            query += " and date <  $" + queryParams.length  + " ";
+            query += " and date <  $" + queryParams.length + " ";
         }
 
 
-        return this._database.any(query, queryParams );
+        return this._database.any(query, queryParams);
 
     }
 
@@ -94,8 +89,7 @@ class DatabaseClient {
      * @param station
      * @returns {Promise<ObservationType[]>}
      */
-    getStationObservationTypes(station)
-    {
+    getStationObservationTypes(station) {
 
         return this._database.any('select distinct t.* from observation_type as t join observation as o on t.type = o.type and o.station=$1 order by t.type', station);
 
@@ -120,7 +114,7 @@ class DatabaseClient {
      */
     getObservationTypes() {
 
-       return  this._database.any('select * from observation_type');
+        return this._database.any('select * from observation_type');
 
 
     }
@@ -132,12 +126,11 @@ class DatabaseClient {
      * @returns {string}
      * @private
      */
-    _createInsertStatement(obj, table)
-    {
+    _createInsertStatement(obj, table) {
 
         var keysSorted = Object.keys(obj).sort();
 
-        return  "INSERT INTO " + table + "(" + keysSorted.join(",")  + ") VALUES("+ keysSorted.map((v,index)=>'$' + (index+1)).join(",") + ")";
+        return "INSERT INTO " + table + "(" + keysSorted.join(",") + ") VALUES(" + keysSorted.map((v, index) => '$' + (index + 1)).join(",") + ")";
 
 
     }
@@ -145,8 +138,7 @@ class DatabaseClient {
     /**
      * Shuts down the client
      */
-    shutDown()
-    {
+    shutDown() {
 
         return this._database.$pool.end();
 
@@ -162,7 +154,7 @@ class DatabaseClient {
     batchInsert(table, array) {
         var self = this;
 
-        return  this._database.tx(t => {
+        return this._database.tx(t => {
             var keysSorted;
             var cmd;
 
@@ -186,9 +178,6 @@ class DatabaseClient {
         });
 
     }
-
-
-
 
 
 }

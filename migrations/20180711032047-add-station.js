@@ -5,25 +5,24 @@ var type;
 var seed;
 
 /**
-  * We receive the dbmigrate dependency from dbmigrate initially.
-  * This enables us to not have to rely on NODE_PATH.
-  */
-exports.setup = function(options, seedLink) {
-  dbm = options.dbmigrate;
-  type = dbm.dataType;
-  seed = seedLink;
+ * We receive the dbmigrate dependency from dbmigrate initially.
+ * This enables us to not have to rely on NODE_PATH.
+ */
+exports.setup = function (options, seedLink) {
+    dbm = options.dbmigrate;
+    type = dbm.dataType;
+    seed = seedLink;
 };
 
-exports.up = function(db, callback) {
+exports.up = function (db, callback) {
 
     db.createTable("station", {
-       id: {type: 'int', primaryKey: true, autoIncrement:true},
-       ghcnid : {type:'string', length:18, unique:true, notNull:true},
-       name: {type:'string', length:255},
-       lat: {type:'decimal'},
-        long: {type:'decimal'},
-        elevation: {type:'decimal'}
-
+        id: {type: 'int', primaryKey: true, autoIncrement: true},
+        ghcnid: {type: 'string', length: 18, unique: true, notNull: true},
+        name: {type: 'string', length: 255},
+        lat: {type: 'decimal'},
+        long: {type: 'decimal'},
+        elevation: {type: 'decimal'}
 
 
     }, callback);
@@ -31,11 +30,11 @@ exports.up = function(db, callback) {
 
 };
 
-exports.down = function(db, callback) {
+exports.down = function (db, callback) {
     db.dropTable("station", callback);
 
 };
 
 exports._meta = {
-  "version": 1
+    "version": 1
 };
