@@ -9,6 +9,9 @@ describe('Database Access', function(){
 
     before(async function(){
 
+        process.on('unhandledRejection', function (reason) {
+            throw reason;
+        });
         this.timeout(3000);
 
         var m = require(path.join(__dirname, "../startup/A09-migration"));
@@ -32,7 +35,7 @@ describe('Database Access', function(){
 
         this.timeout(0);
         var l = require(path.join(__dirname, "../startup/A11-load"));
-        await l(config, true);
+        await l(config);
         var e = await config.databaseClient.isTableEmpty("station");
 
         assert.ok(!e, "Loaded stations");

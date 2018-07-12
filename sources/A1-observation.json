@@ -8,13 +8,14 @@
       null,
       null,
       null,
-      "observationTime"
+      "time"
     ],
    "table": "observation",
    "conversions":
    {
-     "date":"ghcnDate"
-
+     "date":"ghcnDate",
+     "time":"integer",
+     "value": "dec"
    },
    "format":"CSV"
 

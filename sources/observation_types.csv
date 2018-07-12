@@ -2,7 +2,7 @@ PRCP,tenths of mm,Precipitation
 SNOW,mm,Snowfall 
 SNWD,mm,Snow depth 
 TMAX,tenths of degrees C,Maximum temperature 
-TMIN,tenths of degrees C,Minimum temperature 
+TMIN,tenths of degrees C,Min temperature 
 ACMC,percent,Average cloudiness midnight to midnight from 30-second ceilometer data 
 ACMH,percent,Average cloudiness midnight to midnight from  manual observations 
 ACSC,percent,Average cloudiness sunrise to sunset from 30-second ceilometer data 
@@ -48,6 +48,240 @@ WESF,tenths of mm,Water equivalent of snowfall
 WSF1,tenths of meters per second,Fastest 1-minute wind speed 
 WSF2,tenths of meters per second,Fastest 2-minute wind speed 
 WSF5,tenths of meters per second,Fastest 5-second wind speed 
-WSFG,tenths of meters per second,Peak gust wind speed 
+WSFG,tenths of meters per second,Peak gust wind speed
 WSFI,tenths of meters per second,Highest instantaneous wind speed 
-WSFM,tenths of meters per second,Fastest mile wind speed 
+WSFM,tenths of meters per second,Fastest mile wind speed
+SN00,tenths of degrees C, Min soil temperature
+SN01,tenths of degrees C, Min soil temperature
+SN02,tenths of degrees C, Min soil temperature
+SN03,tenths of degrees C, Min soil temperature
+SN04,tenths of degrees C, Min soil temperature
+SN05,tenths of degrees C, Min soil temperature
+SN06,tenths of degrees C, Min soil temperature
+SN07,tenths of degrees C, Min soil temperature
+SN08,tenths of degrees C, Min soil temperature
+SN09,tenths of degrees C, Min soil temperature
+SN10,tenths of degrees C, Min soil temperature
+SN11,tenths of degrees C, Min soil temperature
+SN12,tenths of degrees C, Min soil temperature
+SN13,tenths of degrees C, Min soil temperature
+SN14,tenths of degrees C, Min soil temperature
+SN15,tenths of degrees C, Min soil temperature
+SN16,tenths of degrees C, Min soil temperature
+SN17,tenths of degrees C, Min soil temperature
+SN18,tenths of degrees C, Min soil temperature
+SN19,tenths of degrees C, Min soil temperature
+SN20,tenths of degrees C, Min soil temperature
+SN21,tenths of degrees C, Min soil temperature
+SN22,tenths of degrees C, Min soil temperature
+SN23,tenths of degrees C, Min soil temperature
+SN24,tenths of degrees C, Min soil temperature
+SN25,tenths of degrees C, Min soil temperature
+SN26,tenths of degrees C, Min soil temperature
+SN27,tenths of degrees C, Min soil temperature
+SN28,tenths of degrees C, Min soil temperature
+SN29,tenths of degrees C, Min soil temperature
+SN30,tenths of degrees C, Min soil temperature
+SN31,tenths of degrees C, Min soil temperature
+SN32,tenths of degrees C, Min soil temperature
+SN33,tenths of degrees C, Min soil temperature
+SN34,tenths of degrees C, Min soil temperature
+SN35,tenths of degrees C, Min soil temperature
+SN36,tenths of degrees C, Min soil temperature
+SN37,tenths of degrees C, Min soil temperature
+SN38,tenths of degrees C, Min soil temperature
+SN39,tenths of degrees C, Min soil temperature
+SN40,tenths of degrees C, Min soil temperature
+SN41,tenths of degrees C, Min soil temperature
+SN42,tenths of degrees C, Min soil temperature
+SN43,tenths of degrees C, Min soil temperature
+SN44,tenths of degrees C, Min soil temperature
+SN45,tenths of degrees C, Min soil temperature
+SN46,tenths of degrees C, Min soil temperature
+SN47,tenths of degrees C, Min soil temperature
+SN48,tenths of degrees C, Min soil temperature
+SN49,tenths of degrees C, Min soil temperature
+SN50,tenths of degrees C, Min soil temperature
+SN51,tenths of degrees C, Min soil temperature
+SN52,tenths of degrees C, Min soil temperature
+SN53,tenths of degrees C, Min soil temperature
+SN54,tenths of degrees C, Min soil temperature
+SN55,tenths of degrees C, Min soil temperature
+SN56,tenths of degrees C, Min soil temperature
+SN57,tenths of degrees C, Min soil temperature
+SN58,tenths of degrees C, Min soil temperature
+SN59,tenths of degrees C, Min soil temperature
+SN60,tenths of degrees C, Min soil temperature
+SN61,tenths of degrees C, Min soil temperature
+SN62,tenths of degrees C, Min soil temperature
+SN63,tenths of degrees C, Min soil temperature
+SN64,tenths of degrees C, Min soil temperature
+SN65,tenths of degrees C, Min soil temperature
+SN66,tenths of degrees C, Min soil temperature
+SN67,tenths of degrees C, Min soil temperature
+SN68,tenths of degrees C, Min soil temperature
+SN69,tenths of degrees C, Min soil temperature
+SN70,tenths of degrees C, Min soil temperature
+SN71,tenths of degrees C, Min soil temperature
+SN72,tenths of degrees C, Min soil temperature
+SN73,tenths of degrees C, Min soil temperature
+SN74,tenths of degrees C, Min soil temperature
+SN75,tenths of degrees C, Min soil temperature
+SN76,tenths of degrees C, Min soil temperature
+SN77,tenths of degrees C, Min soil temperature
+SN78,tenths of degrees C, Min soil temperature
+SN79,tenths of degrees C, Min soil temperature
+SN80,tenths of degrees C, Min soil temperature
+SN81,tenths of degrees C, Min soil temperature
+SN82,tenths of degrees C, Min soil temperature
+SN83,tenths of degrees C, Min soil temperature
+SN84,tenths of degrees C, Min soil temperature
+SN85,tenths of degrees C, Min soil temperature
+SN86,tenths of degrees C, Min soil temperature
+SN87,tenths of degrees C, Min soil temperature
+SN88,tenths of degrees C, Min soil temperature
+SN89,tenths of degrees C, Min soil temperature
+WT00,Weather Type, Weather Type
+WT01,Weather Type, Weather Type
+WT02,Weather Type, Weather Type
+WT03,Weather Type, Weather Type
+WT04,Weather Type, Weather Type
+WT05,Weather Type, Weather Type
+WT06,Weather Type, Weather Type
+WT07,Weather Type, Weather Type
+WT08,Weather Type, Weather Type
+WT09,Weather Type, Weather Type
+WT10,Weather Type, Weather Type
+WT11,Weather Type, Weather Type
+WT12,Weather Type, Weather Type
+WT13,Weather Type, Weather Type
+WT14,Weather Type, Weather Type
+WT15,Weather Type, Weather Type
+WT16,Weather Type, Weather Type
+WT17,Weather Type, Weather Type
+WT18,Weather Type, Weather Type
+WT19,Weather Type, Weather Type
+WT20,Weather Type, Weather Type
+WT21,Weather Type, Weather Type
+WT22,Weather Type, Weather Type
+WV01,Weather Type, Vicinity Weather
+WV02,Weather Type, Vicinity Weather
+WV03,Weather Type, Vicinity Weather
+WV04,Weather Type, Vicinity Weather
+WV05,Weather Type, Vicinity Weather
+WV06,Weather Type, Vicinity Weather
+WV07,Weather Type, Vicinity Weather
+WV08,Weather Type, Vicinity Weather
+WV09,Weather Type, Vicinity Weather
+WV10,Weather Type, Vicinity Weather
+WV11,Weather Type, Vicinity Weather
+WV12,Weather Type, Vicinity Weather
+WV13,Weather Type, Vicinity Weather
+WV14,Weather Type, Vicinity Weather
+WV15,Weather Type, Vicinity Weather
+WV16,Weather Type, Vicinity Weather
+WV17,Weather Type, Vicinity Weather
+WV18,Weather Type, Vicinity Weather
+WV19,Weather Type, Vicinity Weather
+WV20,Weather Type, Vicinity Weather
+WV21,Weather Type, Vicinity Weather
+SX00,Degrees C,Maximum soil temperature
+SX01,Degrees C,Maximum soil temperature
+SX02,Degrees C,Maximum soil temperature
+SX03,Degrees C,Maximum soil temperature
+SX04,Degrees C,Maximum soil temperature
+SX05,Degrees C,Maximum soil temperature
+SX06,Degrees C,Maximum soil temperature
+SX07,Degrees C,Maximum soil temperature
+SX08,Degrees C,Maximum soil temperature
+SX09,Degrees C,Maximum soil temperature
+SX10,Degrees C,Maximum soil temperature
+SX11,Degrees C,Maximum soil temperature
+SX12,Degrees C,Maximum soil temperature
+SX13,Degrees C,Maximum soil temperature
+SX14,Degrees C,Maximum soil temperature
+SX15,Degrees C,Maximum soil temperature
+SX16,Degrees C,Maximum soil temperature
+SX17,Degrees C,Maximum soil temperature
+SX18,Degrees C,Maximum soil temperature
+SX19,Degrees C,Maximum soil temperature
+SX20,Degrees C,Maximum soil temperature
+SX21,Degrees C,Maximum soil temperature
+SX22,Degrees C,Maximum soil temperature
+SX23,Degrees C,Maximum soil temperature
+SX24,Degrees C,Maximum soil temperature
+SX25,Degrees C,Maximum soil temperature
+SX26,Degrees C,Maximum soil temperature
+SX27,Degrees C,Maximum soil temperature
+SX28,Degrees C,Maximum soil temperature
+SX29,Degrees C,Maximum soil temperature
+SX30,Degrees C,Maximum soil temperature
+SX31,Degrees C,Maximum soil temperature
+SX32,Degrees C,Maximum soil temperature
+SX33,Degrees C,Maximum soil temperature
+SX34,Degrees C,Maximum soil temperature
+SX35,Degrees C,Maximum soil temperature
+SX36,Degrees C,Maximum soil temperature
+SX37,Degrees C,Maximum soil temperature
+SX38,Degrees C,Maximum soil temperature
+SX39,Degrees C,Maximum soil temperature
+SX40,Degrees C,Maximum soil temperature
+SX41,Degrees C,Maximum soil temperature
+SX42,Degrees C,Maximum soil temperature
+SX43,Degrees C,Maximum soil temperature
+SX44,Degrees C,Maximum soil temperature
+SX45,Degrees C,Maximum soil temperature
+SX46,Degrees C,Maximum soil temperature
+SX47,Degrees C,Maximum soil temperature
+SX48,Degrees C,Maximum soil temperature
+SX49,Degrees C,Maximum soil temperature
+SX50,Degrees C,Maximum soil temperature
+SX51,Degrees C,Maximum soil temperature
+SX52,Degrees C,Maximum soil temperature
+SX53,Degrees C,Maximum soil temperature
+SX54,Degrees C,Maximum soil temperature
+SX55,Degrees C,Maximum soil temperature
+SX56,Degrees C,Maximum soil temperature
+SX57,Degrees C,Maximum soil temperature
+SX58,Degrees C,Maximum soil temperature
+SX59,Degrees C,Maximum soil temperature
+SX60,Degrees C,Maximum soil temperature
+SX61,Degrees C,Maximum soil temperature
+SX62,Degrees C,Maximum soil temperature
+SX63,Degrees C,Maximum soil temperature
+SX64,Degrees C,Maximum soil temperature
+SX65,Degrees C,Maximum soil temperature
+SX66,Degrees C,Maximum soil temperature
+SX67,Degrees C,Maximum soil temperature
+SX68,Degrees C,Maximum soil temperature
+SX69,Degrees C,Maximum soil temperature
+SX70,Degrees C,Maximum soil temperature
+SX71,Degrees C,Maximum soil temperature
+SX72,Degrees C,Maximum soil temperature
+SX73,Degrees C,Maximum soil temperature
+SX74,Degrees C,Maximum soil temperature
+SX75,Degrees C,Maximum soil temperature
+SX76,Degrees C,Maximum soil temperature
+SX77,Degrees C,Maximum soil temperature
+SX78,Degrees C,Maximum soil temperature
+SX79,Degrees C,Maximum soil temperature
+SX80,Degrees C,Maximum soil temperature
+SX81,Degrees C,Maximum soil temperature
+SX82,Degrees C,Maximum soil temperature
+SX83,Degrees C,Maximum soil temperature
+SX84,Degrees C,Maximum soil temperature
+SX85,Degrees C,Maximum soil temperature
+SX86,Degrees C,Maximum soil temperature
+SX87,Degrees C,Maximum soil temperature
+SX88,Degrees C,Maximum soil temperature
+SX89,Degrees C,Maximum soil temperature
+SX90,Degrees C,Maximum soil temperature
+SX91,Degrees C,Maximum soil temperature
+SX92,Degrees C,Maximum soil temperature
+SX93,Degrees C,Maximum soil temperature
+SX94,Degrees C,Maximum soil temperature
+SX95,Degrees C,Maximum soil temperature
+SX96,Degrees C,Maximum soil temperature
+SX97,Degrees C,Maximum soil temperature
+SX98,Degrees C,Maximum soil temperature
+SX99,Degrees C,Maximum soil temperature

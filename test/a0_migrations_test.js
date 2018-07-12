@@ -24,9 +24,5 @@ describe('Database Migrations', ()=> {
 
 
     });
-    after(()=>{
 
-        return config.databaseClient.shutDown();
-
-    })
 });

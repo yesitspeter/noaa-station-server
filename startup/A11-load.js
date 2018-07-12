@@ -7,7 +7,7 @@ const stream = require('stream');
 const PromiseFtp = require('promise-ftp');
 const URL = require('url');
 const zlib = require('zlib');
-const gzip = zlib.createGzip();
+const gzip = zlib.createGunzip();
 const readline = require('readline');
 const csv = require('csv-parse')
 const moment = require('moment');
@@ -15,7 +15,7 @@ const seach = require('stream-each');
 
 var byLine = require('byline');
 
-const FLUSH_WHEN = 500;
+const FLUSH_WHEN = 15000;
 
 var conversions = {
 
@@ -26,8 +26,36 @@ var conversions = {
        return m.toDate();
 
 
-  }
+  },
+    integer: function(val){
 
+
+      if(val == "")
+          return null;
+
+        var result =  parseInt(val);
+
+        if(isNaN(result))
+            return null;
+
+        return result;
+
+
+    },
+    dec: function(val){
+
+
+        if(val == "")
+            return null;
+
+        var result =  parseFloat(val);
+
+        if(isNaN(result))
+            return null;
+
+        return result;
+
+    }
 
 };
 
@@ -50,7 +78,7 @@ function mapToSpec(data, specFile)
                  var conv = specFile.conversions[col];
 
                  if(conversions[conv])
-                     out[col] = conversions[conv](data[i]);
+                     out[col] = conversions[conv](out[col]);
 
 
              }
@@ -180,7 +208,7 @@ async function processCSV(specFile, config)
 
 
 
-
+    int cycles =0;
     var buffer =  [];
 
     var fileStream;
@@ -206,7 +234,8 @@ async function processCSV(specFile, config)
 
                 config.databaseClient.batchInsert(specFile.table, buffer).then(() => {
 
-
+                    if(cycles++ % 20 == 0)
+                        console.log("\tI'm still working...");
 
                     buffer.length = 0;
                     next();
@@ -256,7 +285,7 @@ async function processCSV(specFile, config)
 /**
  * Downloads the file to a temp directory and streams the result
  * @param url
- * @returns {Promise<stream>} - returns the temp file location
+ * @returns {stream} - returns the temp file location
  */
 async function getStreamFromFileDownload(url)
 {
@@ -266,9 +295,13 @@ async function getStreamFromFileDownload(url)
 
     var readStream = fs.createReadStream(downloadedFileLoc);
 
-    if(path.extname(url) == '.gz')
+    if(path.extname(url) == '.gz') {
 
-         return  readStream.pipe();
+
+
+        return readStream.pipe(gzip)
+
+    }
     else
          return readStream;
 
