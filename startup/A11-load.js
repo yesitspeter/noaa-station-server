@@ -15,7 +15,7 @@ const seach = require('stream-each');
 
 var byLine = require('byline');
 
-const FLUSH_WHEN = 15000;
+const FLUSH_WHEN = 18000;
 
 var conversions = {
 
@@ -208,7 +208,7 @@ async function processCSV(specFile, config)
 
 
 
-    int cycles =0;
+    var cycles =0;
     var buffer =  [];
 
     var fileStream;
@@ -236,6 +236,7 @@ async function processCSV(specFile, config)
 
                     if(cycles++ % 20 == 0)
                         console.log("\tI'm still working...");
+
 
                     buffer.length = 0;
                     next();

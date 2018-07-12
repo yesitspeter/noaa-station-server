@@ -2,7 +2,7 @@
 
 module.exports  = function(config, callback) {
 
-    var cors = require('cors');
+
 
     const express = require('express');
     const moment = require('moment');
@@ -15,7 +15,6 @@ module.exports  = function(config, callback) {
     app.use("/api/v1/", api);
 
 
-    api.use(cors);
 
     api.get("/stations", function (req, res) {
 
