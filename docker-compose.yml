@@ -1,39 +1,33 @@
 
-version: '2'
+version: '3'
 
 
 services:
-  nginx-proxy:
-    image: jwilder/nginx-proxy
-    container_name: nginx-proxy
-    ports:
-      - "80:80"
-    volumes:
-      - "/var/run/docker.sock:/tmp/docker.sock:ro"
-
 
   postgres:
-    image: postgres:9.6.3
+    image: postgres:9.6.9
     environment:
       PGDATA: "/var/lib/postgresql/data/pgsql"
       POSTGRES_USER: "pguser"
       POSTGRES_PASSWORD: ${POSTGRES_PW}
       POSTGRES_DB: "noaa_stations"
+      POSTGRES_PORT: "5432"
+    ports:
+      - 5432
     volumes:
       - "/var/lib/postgresql/data/pgsql"
 
 
-  node:
+  service:
+    expose:
+      - "8888"
     build: .
     environment:
       NODE_ENV: "production"
-      DATABASE_HOST: "dbhost"
+      DATABASE_HOST: dbhost
       DATABASE_PORT: "5432"
-      VIRTUAL_HOST: ${HOSTNAME}
       DATABASE_UN: "pguser"
       DATABASE_PW: ${POSTGRES_PW}
       DATABASE_NAME: "noaa_stations"
-    volumes:
-      - "./:/usr/src/app"
     links:
       - "postgres:dbhost"

@@ -1,15 +1,24 @@
 
 
-const config = {};
+const configData = {};
 
-require("fs").readdirSync(__dirname).forEach(function (file) {
-    if (file !== "all.js") {
-        const gen = require("./" + file);
 
-        gen(config);
+async function config() {
+    var files = require("fs").readdirSync(__dirname);
+
+    for (var i = 0; i < files.length; ++i) {
+        var file = files[i];
+
+        if (file !== "all.js") {
+            const gen = require("./" + file);
+
+            await gen(config);
+        }
+
     }
-});
+    return configData;
 
+}
 /**
  * @typedef Configuration
  * @type {object}
@@ -18,7 +27,7 @@ require("fs").readdirSync(__dirname).forEach(function (file) {
 
 /**
  *
- * @type {Configuration}
+ * @type {promise<Configuration>}
  *
  */
 module.exports = config;
