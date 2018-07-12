@@ -3,8 +3,8 @@
 A server for NOAA Daily Global Historical Climatology Network data.
 
 * Data Sources are configurable and can be easily expanded in future updates.
-**  CSV and Fixed Width column files are supported
-** Data is loaded through streams (gzip streams supported)
+   *  CSV and Fixed Width column files are supported
+   *  Data is loaded through streams (gzip streams supported)
 * The database is designed for future change (migrations)
 * Data is served through a RESTful API and documented in the api.raml file
 
