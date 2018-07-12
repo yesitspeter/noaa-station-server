@@ -19,7 +19,6 @@ exports.up = function(db, callback) {
     db.createTable("station", {
        id: {type: 'int', primaryKey: true, autoIncrement:true},
        ghcnid : {type:'string', length:18, unique:true, notNull:true},
-       state: {type:'string', length:2},
        name: {type:'string', length:255},
        lat: {type:'decimal'},
         long: {type:'decimal'},

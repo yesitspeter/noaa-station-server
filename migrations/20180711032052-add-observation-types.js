@@ -17,8 +17,8 @@ exports.setup = function(options, seedLink) {
 exports.up = function(db, callback) {
     db.createTable("observation_type", {
         id: {type: 'int', primaryKey: true, autoIncrement:true},
-        type: {type:'string', length:5},
-        units: {type:'string', length: 10},
+        type: {type:'string', length:4, unique: true},
+        units: {type:'string', length: 48},
         description: {type:'string', length:128}
     }, callback);
 };

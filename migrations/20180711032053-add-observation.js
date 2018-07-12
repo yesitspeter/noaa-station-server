@@ -17,31 +17,31 @@ exports.setup = function(options, seedLink) {
 exports.up = function(db, callback) {
     db.createTable("observation", {
         id: {type: 'int', primaryKey: true, autoIncrement:true},
-        stationId : {type:'int', foreignKey: {
-              name: 'station_id_observation_stationId_fk',
+        station : {type:'string', length: 18 , foreignKey: {
+              name: 'station_id_observation_station_fk',
               table: 'station',
               rules: {
                   onDelete: 'CASCADE'
               },
               mapping: {
-                  stationId: 'id'
+                  station: 'ghcnid'
               }
 
             }},
         date: {type:'date'},
-        observationTypeId: {type:'int', foreignKey: {
+        type: {type:'string', length:4, foreignKey: {
                 name: 'station_id_observation_observation_type_id_fk',
                 table: 'observation_type',
                 rules: {
                     onDelete: 'CASCADE'
                 },
                 mapping: {
-                    observationTypeId: 'id'
+                    type: 'type'
                 }
 
             }},
         value: {type:'decimal'},
-        observationTime: {type:'int', notNull:false}
+        time: {type:'int', notNull:false}
 
 
 

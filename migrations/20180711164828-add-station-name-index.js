@@ -14,12 +14,13 @@ exports.setup = function(options, seedLink) {
   seed = seedLink;
 };
 
+
 exports.up = function(db, callback) {
-  db.addIndex("observation", "observation_station_idx", ["station"], false, callback);
+    db.addIndex("station", "observation_station_name_idx", ["name"], false, callback);
 };
 
 exports.down = function(db, callback) {
-    db.removeIndex("observation", "observation_station_idx", callback);
+    db.removeIndex("station", "observation_station_name_idx", callback);
 };
 
 exports._meta = {
