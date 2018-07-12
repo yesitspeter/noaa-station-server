@@ -1,0 +1,110 @@
+#%RAML 1.0
+title: NoaaApi
+version: v1
+types:
+  StationLookup:
+    type: object
+    properties:
+      station: string
+      name: string
+
+
+  ObservationType:
+    type: object
+    properties:
+      type:
+        type: string
+        description: The 4 letter observation type
+      units:
+        type: string
+        description: The units of any observation value of this type
+      description:
+        type: string
+        description: A description of this observation type
+
+
+  Observation:
+    type: object
+    properties:
+      id:
+        type: number
+        description: an identifier for the observation
+      type:
+        type: string
+        description: the four letter observation type
+      date:
+        type: date-only
+        description: The date of the observation
+      value:
+         type: number
+         description: The value of the observation
+
+  Station:
+    type: object
+    properties:
+      id:
+        type: string
+        description: the id of the station
+      name:
+        type: string
+        description: the human readable name of the station
+      lat:
+        type: number
+        description: The location of the station (latitude)
+      long:
+         type: number
+         description: The location of the station (longitude)
+      elevation:
+          type: number
+          description: The elevation of the station
+      observationTypes:
+          type: ObservationType[]
+          description: A list of available observation types for this station
+
+
+/api/v1/stations:
+  get:
+    description: Performs a name matching lookup of stations
+    queryParameters:
+       limit:
+         type: number
+         required: false
+         description: the maximum number of response elements
+       q:
+         required: false
+         type: string
+         description: A query to be run against the name of the station.
+    responses:
+      200:
+        body:
+          application/json:
+            type: StationLookup[]
+
+/api/v1/stations/{stationId}:
+  get:
+    description: Obtains information about a station
+    responses:
+      200:
+        body:
+          application/json:
+            type: Station
+
+/api/v1/stations/{stationId}/observations:
+  get:
+    description: Obtains observations for the station
+    queryParameters:
+      types:
+        type: string
+        description: A comma seperated list of 4 letter observation type names
+        default: PRCP,SNOW,SWND,TMAX,TMIN
+      startDate:
+        type: date-only
+        description: A start date for filtering observations
+      endDate:
+        type: date-only
+        description: An end date for filtering observations
+    responses:
+      200:
+        body:
+          application/json:
+            type:  Observation[]
